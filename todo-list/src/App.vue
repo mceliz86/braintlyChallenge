@@ -3,12 +3,12 @@
 </template>
 
 <script>
-import taskComponent from './components/task-component.vue';
+import TaskComponent from './components/task-component.vue';
 
 export default {
   name: 'App',
   components: {
-    taskComponent,
+    TaskComponent,
   }
 }
 </script>
