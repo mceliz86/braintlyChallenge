@@ -12,15 +12,20 @@
                         </div>
                     </div>
                     <br>
+                    <div v-if="loading" class="text-center">
+                        <div class="spinner-border" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                    </div>
                     <h5 v-if="!listTask.length">No tasks!</h5>
-                    <ul class="list-group">
+                    <ul v-if="!loading" class="list-group">
                         <li v-for="(task, index) in listTask" :key="index" class="list-group-item d-flex justify-content-between">
-                            <span v-bind:class="{'text-success' : task.status}" class="cursor" v-on:click="editTask(task,index)">
-                                <i v-bind:class="[task.status ? 'fa-solid fa-circle-check' : 'fa-regular fa-circle']"></i>
+                            <span v-bind:class="{'text-success' : task.is_completed}" class="cursor" v-on:click="editTask(task.id)">
+                                <i v-bind:class="[task.is_completed ? 'fa-solid fa-circle-check' : 'fa-regular fa-circle']"></i>
                             </span>
-                            {{task.name}}
+                            {{task.title}}
                             <span class="text-danger cursor">
-                                <i v-on:click="removeTask(index)" class="fa-solid fa-trash"></i>
+                                <i v-on:click="removeTask(task.id)" class="fa-solid fa-trash"></i>
                             </span>
                         </li>
                     </ul>
@@ -31,32 +36,64 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
     name: 'task-component', 
     data(){
         return{
             task: '',
-            listTask: []
+            listTask: [],
+            loading: false,
         }
     },
     methods: {
         addTask(){
             const task = {
-                name: this.task,
-                status: false,
+                title: this.task,
+                due_date: new Date(),
+                priority_id: 1,
+                is_completed: false,
+                created_at:new Date(),
             }
-            if(task.name){
-                this.listTask.push(task);
+            if(task.title){
+                this.loading = true;
+                axios.post("http://localhost:5000/api/task/", task).then(response =>{
+                    console.log(response);
+                    this.loading=false;
+                    this.getTasks();
+                    }).catch(error => {
+                        console.error(error);
+                    });
                 this.task = '';
             }
         },
-        removeTask(index){
-            this.listTask.splice(index, 1);
+        removeTask(id){
+            this.loading = true;
+            axios.delete("http://localhost:5000/api/task/" + id).then(response => {
+                console.log(response);
+                this.getTasks();
+                this.loading = false;
+            }).catch(error => {console.log(error)
+            });
         },
-        editTask(task, index){
-            this.listTask[index].status = !task.status;
+        editTask(id){
+            this.loading=true;
+            axios.put("http://localhost:5000/api/task/" + id).then( () => {
+               this.loading=false;
+               this.getTasks();
+            }).catch(error =>{console.log(error)});
+        },
+        getTasks(){
+            this.loading = true;
+            axios.get("http://localhost:5000/api/task").then(response => {
+            this.listTask = response.data;
+            this.loading = false;
+        });
         }
     },
+    created: function(){
+        this.getTasks();
+    }
 }
 </script>
 
