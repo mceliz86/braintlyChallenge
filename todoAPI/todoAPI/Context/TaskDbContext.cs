@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using todoAPI.Helpers;
-using todoAPI.Models;
+using todoAPI.Entities;
 
 namespace todoAPI.Context
 {
@@ -13,8 +13,8 @@ namespace todoAPI.Context
     {
         private readonly IOptions<RDSConnectionString> _rdsConfig;
 
-        public DbSet<TaskItem> tasks { get; set; }
-        public DbSet<Priority> priorities { get; set; }
+        public DbSet<TaskItem> Tasks { get; set; }
+        public DbSet<Priority> Priorities { get; set; }
 
         public TaskDbContext(IOptions<RDSConnectionString> rdsConfig)
         {

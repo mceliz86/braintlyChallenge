@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using todoAPI.Context;
-using todoAPI.Models;
+using todoAPI.Entities;
 
 namespace todoAPI.Controllers
 {
