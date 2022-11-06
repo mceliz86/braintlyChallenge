@@ -5873,11 +5873,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Matias Celiz\\Desktop\\braintlyChallenge\\todoAPI\\todoAPI\\todoAPI.csproj",
+      "projectUniqueName": "C:\\Users\\Matias Celiz\\Desktop\\braintlyChallenge\\braintlyChallenge\\todoAPI\\todoAPI\\todoAPI.csproj",
       "projectName": "todoAPI",
-      "projectPath": "C:\\Users\\Matias Celiz\\Desktop\\braintlyChallenge\\todoAPI\\todoAPI\\todoAPI.csproj",
+      "projectPath": "C:\\Users\\Matias Celiz\\Desktop\\braintlyChallenge\\braintlyChallenge\\todoAPI\\todoAPI\\todoAPI.csproj",
       "packagesPath": "C:\\Users\\Matias Celiz\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Matias Celiz\\Desktop\\braintlyChallenge\\todoAPI\\todoAPI\\obj\\",
+      "outputPath": "C:\\Users\\Matias Celiz\\Desktop\\braintlyChallenge\\braintlyChallenge\\todoAPI\\todoAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

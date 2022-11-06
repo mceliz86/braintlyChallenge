@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using todoAPI.Context;
+using todoAPI.Helpers;
 
 namespace todoAPI
 {
@@ -26,6 +27,7 @@ namespace todoAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.Configure<RDSConnectionString>(Configuration.GetSection("RDSConnectionString"));
             services.AddControllers();
             services.AddDbContext<TaskDbContext>();
             services.AddCors(options => options.AddPolicy("AllowWebApp",
