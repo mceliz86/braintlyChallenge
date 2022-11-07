@@ -11,7 +11,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using todoAPI.Context;
+using todoAPI.Data;
 using todoAPI.Helpers;
+using todoAPI.Interfaces;
 
 namespace todoAPI
 {
@@ -28,6 +30,7 @@ namespace todoAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.Configure<RDSConnectionString>(Configuration.GetSection("RDSConnectionString"));
+            services.AddScoped<ITaskRepository, TaskRepository>();
             services.AddControllers();
             services.AddDbContext<TaskDbContext>();
             services.AddCors(options => options.AddPolicy("AllowWebApp",

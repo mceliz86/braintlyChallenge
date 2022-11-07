@@ -1,9 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using todoAPI.Helpers;
 using todoAPI.Entities;
 
@@ -13,8 +10,8 @@ namespace todoAPI.Context
     {
         private readonly IOptions<RDSConnectionString> _rdsConfig;
 
-        public DbSet<TaskItem> Tasks { get; set; }
-        public DbSet<Priority> Priorities { get; set; }
+        public DbSet<TaskItem> tasks { get; set; }
+        public DbSet<Priority> priorities { get; set; }
 
         public TaskDbContext(IOptions<RDSConnectionString> rdsConfig)
         {

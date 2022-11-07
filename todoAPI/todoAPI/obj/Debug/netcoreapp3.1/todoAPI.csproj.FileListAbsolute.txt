@@ -72,6 +72,8 @@ C:\Users\Matias Celiz\Desktop\braintlyChallenge\braintlyChallenge\todoAPI\todoAP
 C:\Users\Matias Celiz\Desktop\braintlyChallenge\braintlyChallenge\todoAPI\todoAPI\bin\Debug\netcoreapp3.1\todoAPI.runtimeconfig.dev.json
 C:\Users\Matias Celiz\Desktop\braintlyChallenge\braintlyChallenge\todoAPI\todoAPI\bin\Debug\netcoreapp3.1\todoAPI.dll
 C:\Users\Matias Celiz\Desktop\braintlyChallenge\braintlyChallenge\todoAPI\todoAPI\bin\Debug\netcoreapp3.1\todoAPI.pdb
+C:\Users\Matias Celiz\Desktop\braintlyChallenge\braintlyChallenge\todoAPI\todoAPI\bin\Debug\netcoreapp3.1\AutoMapper.dll
+C:\Users\Matias Celiz\Desktop\braintlyChallenge\braintlyChallenge\todoAPI\todoAPI\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\Matias Celiz\Desktop\braintlyChallenge\braintlyChallenge\todoAPI\todoAPI\bin\Debug\netcoreapp3.1\Humanizer.dll
 C:\Users\Matias Celiz\Desktop\braintlyChallenge\braintlyChallenge\todoAPI\todoAPI\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
 C:\Users\Matias Celiz\Desktop\braintlyChallenge\braintlyChallenge\todoAPI\todoAPI\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
