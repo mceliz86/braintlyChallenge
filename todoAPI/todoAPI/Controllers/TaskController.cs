@@ -49,7 +49,7 @@ namespace todoAPI.Controllers
 
         //POST api/<TaskController>
         [HttpPost]
-        public async Task<IActionResult> AddTask([FromBody] TaskItem task)
+        public async Task<IActionResult> AddTask(TaskItem task)
         {
             try
             {
@@ -66,7 +66,7 @@ namespace todoAPI.Controllers
 
         // PUT api/<TaskController>/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateTask([FromBody]TaskItem taskItem, int id)
+        public async Task<IActionResult> UpdateTask(TaskItem taskItem, int id)
         {
             try
             {
